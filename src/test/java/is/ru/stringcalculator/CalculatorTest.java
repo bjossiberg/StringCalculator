@@ -10,23 +10,19 @@ public class CalculatorTest {
     }
 
 	@Test
-	public void testEmptyString() {
+	public void EmptyStringTest(){
 		assertEquals(0, Calculator.add(""));
 	}
 
 	@Test
-	public void testOneNumber() {
+	public void OneNumberTest(){
 		assertEquals(1, Calculator.add("1"));
 	}
 
 	@Test
-	public void testTwoNumbers() {
+	public void TwoNumberTest(){
 		assertEquals(3, Calculator.add("1,2"));
-	}	
+	}
 
-	@Test
-    public void testMultipleNumbers(){
-    	assertEquals(6, Calculator.add("1,2,3"));
-    }
-
+	
 }

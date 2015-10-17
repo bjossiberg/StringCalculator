@@ -2,33 +2,21 @@ package is.ru.stringcalculator;
 
 public class Calculator {
 
-	public static int add(String text){
-		if(text.equals("")){
+	public static int add(String string){
+		if(string.length() == 0)
 			return 0;
-		}
-		else if(text.contains(",")){
-			return sum(splitNumbers(text));
-		}
-		else
-			return 1;
+		return sum(string.split(","));
 	}
 
-	private static int toInt(String number){
-		return Integer.parseInt(number);
-	}
-
-	private static String[] splitNumbers(String numbers){
-	    return numbers.split(",");
-	}
-      
-    private static int sum(String[] numbers){
- 	    int total = 0;
-        for(String number : numbers){
-		    total += toInt(number);
+	private static int sum(String[] values) {
+		int total = 0;
+		for (String value : values) {
+			total += toInt(value);
 		}
 		return total;
-    }
+	}
 
-
-
+	private static int toInt(String value) {
+		return Integer.parseInt(value);
+	}
 }
