@@ -38,4 +38,13 @@ public class CalculatorTest {
 	public void AllowDelimiterTest(){
 		assertEquals(6, Calculator.add("//;1;2;3"));
 	}
+
+	@Test
+	public void ExceptionIfNegative(){
+		try {
+			Calculator.add("2,-4,3,-5");
+		} catch (Exception e) {
+			assertEquals("-4,-5", e.getMessage());
+		}
+	}
 }

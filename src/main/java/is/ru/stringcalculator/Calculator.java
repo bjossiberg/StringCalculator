@@ -5,6 +5,7 @@ public class Calculator {
 	public static int add(String string){
 		if(string.length() == 0)
 			return 0;
+		findNegativeNumbers(values(string));
 		return sum(values(string));
 	}
 
@@ -17,7 +18,7 @@ public class Calculator {
 	}
 
 	private static int toInt(String value) {
-		return Integer.parseInt(value);
+		return Integer.valueOf(value);
 	}
 
 	private static String numbers(String string) {
@@ -34,5 +35,16 @@ public class Calculator {
 
 	private static String[] values(String string) {
 		return numbers(string).split(delimiter(string));
+	}
+
+	private static void findNegativeNumbers(String[] values) {
+		String negativeNumbers = "";
+		for (String value : values) {
+			if(toInt(value) < 0)
+				negativeNumbers += ","+value;
+		}
+		if(negativeNumbers.length() > 0)
+			throw new RuntimeException(negativeNumbers.substring(1));
+
 	}
 }
