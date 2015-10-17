@@ -47,7 +47,7 @@ public class Calculator {
 				negativeNumbers += ","+value;
 		}
 		if(negativeNumbers.length() > 0)
-			throw new RuntimeException(negativeNumbers.substring(1));
+			throw new RuntimeException("Negatives not allowed:" + negativeNumbers.substring(1));
 
 	}
 }
