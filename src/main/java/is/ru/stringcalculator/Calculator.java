@@ -12,6 +12,9 @@ public class Calculator {
 	private static int sum(String[] values) {
 		int total = 0;
 		for (String value : values) {
+			if(toInt(value) > 1000) {
+				continue;
+			}
 			total += toInt(value);
 		}
 		return total;
