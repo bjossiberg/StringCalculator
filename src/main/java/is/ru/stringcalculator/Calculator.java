@@ -5,7 +5,7 @@ public class Calculator {
 	public static int add(String string){
 		if(string.length() == 0)
 			return 0;
-		return sum(string.split(","));
+		return sum(string.split(",|\n"));
 	}
 
 	private static int sum(String[] values) {
